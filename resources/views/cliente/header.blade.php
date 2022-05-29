@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Salon de eventos</title>
+    <title>Salón de eventos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
 
