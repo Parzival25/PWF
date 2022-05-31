@@ -20,5 +20,9 @@ Route::get('/', function () {
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('anonimo.index');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
