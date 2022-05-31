@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description', 1000)->nullable();;
             $table->string('imagen')->nullable(); 
             $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('party_id')->references('id')->on('party');
+            $table->foreignId('party_id')->references('id')->on('partys');
             $table->timestamps();
 
         });
