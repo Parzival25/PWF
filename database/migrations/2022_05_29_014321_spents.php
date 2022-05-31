@@ -13,7 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('spents', function (Blueprint $table) {
+            $table->id();
+            $table->float('price')->unsigned();
+            $table->string('description', 1000);    
+            $table->string('belongs')->default('none');
+            $table->timestamps();
+
+        });
     }
 
     /**
