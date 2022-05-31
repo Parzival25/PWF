@@ -13,7 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('package', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('imagen')->nullable();
+            $table->float('price')->unsigned();
+            $table->tinyInteger('status')->default(1);
+            $table->timestamps();
+        });
     }
 
     /**
