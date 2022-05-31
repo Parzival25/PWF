@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size:cover;
+    width: 100% ;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.btn{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.btn:hover {
+	color: #0c9200;
+  }
