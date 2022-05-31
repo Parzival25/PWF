@@ -102,6 +102,31 @@
         display:inline-block;
        
       }
+      
+      header{
+        font-family: Helvetica;
+        margin: 0 auto;
+      }
+      ul{
+        list-style: none;
+      }
+      #menu li>a{
+        color: white;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+        min-width: 100px;
+      }
+      #menu>li{
+        float: left;
+        text-align:center
+      }
+      #menu>li>ul{
+        display: none;
+      }
+      #menu>li:hover>ul {
+        display:block;
+      }
     </style>
 
     
@@ -142,10 +167,9 @@
           <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
             <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
           </a>
-
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small" id="menu">
             <li>
-              <a href="#" class="nav-link text-secondary">
+              <a href="#" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                 Home
               </a>
@@ -171,7 +195,7 @@
             <li>
               <a href="#" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Clientes
+                Usuarios
               </a>
               <ul>
                 <li><a href="">Gerentes</a></li>
