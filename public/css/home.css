@@ -8,3 +8,8 @@ body{
     background-repeat: no-repeat;
     font-family: sans-serif;
 }
+.trans{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+}

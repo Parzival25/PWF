@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Package;
 use Illuminate\Http\Request;
 
 class PackagesController extends Controller
@@ -11,9 +11,11 @@ class PackagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
+        $packages= Package::get();
+        return view('cliente.package', compact('packages') );
     }
 
     /**

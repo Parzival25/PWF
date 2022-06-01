@@ -23,6 +23,9 @@ Route::get('/', function () {
     return view('anonimo.index');
 });
 
+
+Route::get('/pakages', ['App\Http\Controllers\PackagesController', 'index']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

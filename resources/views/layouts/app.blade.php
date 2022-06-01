@@ -16,11 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @livewireStyles
+
 </head>
 <body>
     <div id="app">
@@ -43,10 +41,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
              
-                        <li class="nav-item">
-                            <a href="" class="nav-link">Home</a>
-                        </li>
-                    
+
                      
                         @guest
                             @if (Route::has('login'))
@@ -88,14 +83,6 @@
             @yield('content')
         </main>
     </div>
-
-    <div class="col-lg-12 text-center">
-                 <div class="footer__copyright__text">
-                        <p>Copyright © 2022
-                            Hecho por Alumnos del S8A :)
-                        </p>
-                </div>
-    </div>
-@livewireScripts
+ 
 </body>
 </html>
