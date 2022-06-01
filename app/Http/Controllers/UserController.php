@@ -13,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return response()->json($users);
     }
 
     /**
@@ -34,7 +35,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create($request->post());
+        return response()->json([
+            'user'=>$user
+        ]);
     }
 
     /**
@@ -43,9 +47,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return response()->json($blog);
     }
 
     /**
@@ -66,9 +70,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->fill($request->post())->save();
+        return response()->json([
+            'user'=>$user
+        ]);
     }
 
     /**
@@ -77,8 +84,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $blog-delete();
+        return response()->json([
+            'mensaje'=>'Usuario eliminado'
+        ]);
     }
 }
