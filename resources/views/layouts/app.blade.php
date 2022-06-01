@@ -85,5 +85,14 @@
             @yield('content')
         </main>
     </div>
+
+    <div class="col-lg-12 text-center">
+                 <div class="footer__copyright__text">
+                        <p>Copyright © 2022
+                            Hecho por Alumnos del S8A :)
+                        </p>
+                </div>
+    </div>
+
 </body>
 </html>

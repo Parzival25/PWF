@@ -8,12 +8,3 @@ body{
     background-repeat: no-repeat;
     font-family: sans-serif;
 }
-
-.btn{
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
-.btn:hover {
-	color: #0c9200;
-  }
