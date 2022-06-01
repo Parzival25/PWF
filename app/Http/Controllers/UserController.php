@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return response()->json($blog);
+        return response()->json($user);
     }
 
     /**
@@ -86,7 +86,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $blog-delete();
+        $user->delete();
         return response()->json([
             'mensaje'=>'Usuario eliminado'
         ]);
