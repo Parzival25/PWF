@@ -14,12 +14,12 @@ class Payment extends Model {
         'imagen',
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function users(){
+        return $this->belongsToMany('App\Models\User','id','user_id');
     }
 
-    public function party(){
-        return $this->belongsTo(Party::class);
+    public function parties(){
+        return $this->belongsTo('App\Models\Party','id','party_id');
     }
 
 }
