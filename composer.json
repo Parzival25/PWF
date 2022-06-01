@@ -11,7 +11,10 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
+<<<<<<< HEAD
         "livewire/livewire": "^2.10",
+=======
+>>>>>>> cbb6906d279452123def9d674039855de6724a93
         "owen-it/laravel-auditing": "^13.0"
     },
     "require-dev": {
