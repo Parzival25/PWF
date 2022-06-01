@@ -15,7 +15,7 @@ class PackagesController extends Controller
     public function index()
     {
         $packages= Package::get();
-        return view('cliente.package', compact('packages') );
+        return view('package.crea-paquete', compact('packages') );
     }
 
     /**
@@ -25,7 +25,11 @@ class PackagesController extends Controller
      */
     public function create()
     {
-        //
+        /*
+        $packages= Package::get();
+        return view('cliente.package', compact('packages') );
+        */
+        return view('package.crea-paquete');
     }
 
     /**

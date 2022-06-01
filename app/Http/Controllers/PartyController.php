@@ -23,7 +23,11 @@ class PartyController extends Controller
      */
     public function create()
     {
-        //
+            /*
+            $parties= Party::get();
+            return view('party.party', compact('parties') );
+            */
+        return view('party.crear-fiesta');
     }
 
     /**
@@ -48,6 +52,13 @@ class PartyController extends Controller
         //
     }
 
+    public function list()
+    {
+        //$parties= Party::get();
+        //return view('party.lista-fiestas', compact('parties'));
+        return view('party.lista-fiestas');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -66,9 +77,15 @@ class PartyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    //public function update(Request $request, $id)
+    public function update()
     {
-        //
+            /*
+            $parties= Party::get();
+            return view('party.party', compact('parties') );
+            */
+            return view('party.editar-fiesta');
     }
 
     /**
