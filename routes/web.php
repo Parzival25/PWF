@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+/*probando*/ 
 
 Route::get('/', function () {
     return view('anonimo.index');
