@@ -31,6 +31,13 @@
         </div>
       </section>
 
+      <!-- Default switch -->
+  <div class="custom-control custom-switch">
+    <label class="custom-control-label" for="customSwitches">Toggle this switch element</label>
+    <input type="checkbox" class="custom-control-input" id="customSwitches">
+  </div>
+<br>
+
       <div class="album py-5 bg-light">
         <div class="container">
           <div class="row">
@@ -40,6 +47,20 @@
                 <img class="card-img-top" src="img/Evento1.jpg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">Boda de Usuario24.......</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Ver detalles</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/Evento1.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Cumpleaños de Usuario65.......</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">Ver detalles</button>

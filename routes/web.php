@@ -23,6 +23,9 @@ Route::get('/', function () {
     return view('anonimo.index');
 });
 
+Route::get('/listaClientes', function () {
+    return view('gerente.listaClientes');
+});
 
 Route::get('/pakages', ['App\Http\Controllers\PackagesController', 'index']);
 Route::get('/pakages-crear', ['App\Http\Controllers\PackagesController', 'create']);
