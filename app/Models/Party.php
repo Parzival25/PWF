@@ -8,6 +8,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 
 class Party extends Model implements Auditable
 {
+    public $table = 'partys';
     use \OwenIt\Auditing\Auditable;
     
     protected $fillable = [
