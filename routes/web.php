@@ -26,6 +26,7 @@ Route::get('/listaClientes', function () {
     return view('gerente.listaClientes');
 });
 
+/* Rutas de paquetes */ 
 Route::get('/pakages', ['App\Http\Controllers\PackagesController', 'index']);
 Route::get('/pakages-crear', ['App\Http\Controllers\PackagesController', 'create']);
 
@@ -33,6 +34,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+/* Rutas de Eventos */
 Route::get('/listParty', ['App\Http\Controllers\PartyController', 'list']);
 Route::get('/create-party', ['App\Http\Controllers\PartyController', 'create']);
 Route::get('/update-party', ['App\Http\Controllers\PartyController', 'update']);
