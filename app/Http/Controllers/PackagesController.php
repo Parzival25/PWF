@@ -29,8 +29,17 @@ class PackagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $package= new Package;
+        $data= $request->all();
+        $package->name= $data['name'];
+        $package->descripcion= $data['descripcion'];
+        $package->imagen= $data['imagen'];
+        $package->price= $data['price'];
+        $package->status= $data['status'];
+        $package->save();
+
         /*
         $packages= Package::get();
         return view('cliente.package', compact('packages') );
@@ -80,8 +89,16 @@ class PackagesController extends Controller
      */
 
     //public function update(Request $request, $id)
-    public function update()
+    public function update(Request $request, $id)
     {
+        $package= Package::find($id);
+        $data= $request->all();
+        $package->name= $data['name'];
+        $package->descripcion= $data['descripcion'];
+        $package->imagen= $data['imagen'];
+        $package->price= $data['price'];
+        $package->status= $data['status'];
+        $package->save();
         return view('package.edita-paquete');
     }
 
@@ -94,5 +111,10 @@ class PackagesController extends Controller
     public function destroy($id)
     {
         //
+        $package= Package::where('id',$id)->first();
+
+        $package->delete();
+
+        return back();
     }
 }
