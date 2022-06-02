@@ -22,10 +22,6 @@ Route::get('/', function () {
     return view('anonimo.index');
 });
 
-Route::get('/listaClientes', function () {
-    return view('gerente.listaClientes');
-});
-
 Route::get('/pakages', ['App\Http\Controllers\PackagesController', 'index2']);
 Route::get('/pakages-crear', ['App\Http\Controllers\PackagesController', 'create']);
 
@@ -41,3 +37,12 @@ Route::get('/listParty', ['App\Http\Controllers\PartyController', 'list']);
 Route::get('/create-party', ['App\Http\Controllers\PartyController', 'create']);
 Route::get('/update-party', ['App\Http\Controllers\PartyController', 'update']);
 
+Route::get('/dashboard', ['App\Http\Controllers\UserController', 'views']);
+Route::get('/listaClientes', ['App\Http\Controllers\UserController', 'index']);
+
+Route::get('/crearUsuario', ['App\Http\Controllers\UserController', 'create']);
+Route::get('usuario1/{user}', ['App\Http\Controllers\UserController', 'show'])->name('users.show');
+Route::post('actualizar/{user}', ['App\Http\Controllers\UserController', 'update']);
+Route::get('usuario2/{user}', ['App\Http\Controllers\UserController', 'edit'])->name('users.edit');
+Route::get('usuario3/{user}', ['App\Http\Controllers\UserController', 'destroy'])->name('users.destroy');
+Route::post('registro', ['App\Http\Controllers\UserController', 'store']);

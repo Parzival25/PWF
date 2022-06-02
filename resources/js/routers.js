@@ -8,7 +8,7 @@ export const routes = [
     {
         name:'mostrarUsers',
         path:'/users',
-        component:Mostar
+        component:Mostrar
     },
     {
         name:'crearUsers',
