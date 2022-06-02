@@ -30,7 +30,7 @@ class CreateAuditsTable extends Migration
             $table->index(['user_id', 'user_type']);
         });
     }
-
+//xd
     /**
      * Reverse the migrations.
      *
