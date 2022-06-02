@@ -17,7 +17,29 @@
 @extends('layouts.app')
 @section('content')
 
+<main class="ms-sm-auto px-md-4 bg-light">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+    </div>
+    <h2>Productos</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Confirmacion</th>
+              <th scope="col">Gestionar</th>
 
+            </tr>
+          </thead>
+          <tbody id="lista-partys">
+
+          </tbody>
+        </table>
+    <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="519" height="219" style="display: block; width: 519px; height: 219px;"></canvas>
+</main>
 <!-- Aquí va el footer -->
 
 
@@ -40,7 +62,12 @@
       type:"get",
       success:function(dato){
         var DATOSJSON=JSON.parse(dato.trim());
-        console.log(DATOSJSON);
+        var longitud=DATOSJSON.party.length;
+        var TR="";
+        for(var i=0;i<longitud;i++){
+          TR+="<tr><td>"+(i+1)+"</td><td>"+DATOSJSON.party[i].NAME+"</td><td>"+DATOSJSON.party[i].DESCRIPTION+"</td><td>"+DATOSJSON.party[i].CONFIRMED+"</td><td class='text-center'>"+DATOSJSON.party[i].GESTIONAR+"</td></tr>";
+        }
+        $('#lista-partys').html(TR);
       }
     });
     }

@@ -14,15 +14,14 @@ class PartyController extends Controller
      */
     public function index()
     {
-        $party= Party::all();
-
+        $party= Party::where('id', Auth()->id())->get();
         $TablaJson="";
         for($i=0;$i<count($party);$i++){
         $gestionar="<a class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>";
         $TablaJson.='{
         "ID":"'.$party[$i]->{"id"}.'",
         "NAME":"'.$party[$i]->{"name"}.'",
-        "DESCRIPTION":"'.$party[$i]->{"descripcion"}.'",
+        "DESCRIPTION":"'.$party[$i]->{"description"}.'",
         "CONFIRMED":"'.$party[$i]->{"confirmed"}.'",
         "GESTIONAR":"'.$gestionar.'"
         },';
