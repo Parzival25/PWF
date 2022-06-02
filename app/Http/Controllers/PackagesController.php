@@ -17,6 +17,11 @@ class PackagesController extends Controller
         $packages= Package::get();
         return view('package.crea-paquete', compact('packages') );
     }
+    public function index2()
+    {
+        $packages= Package::get();
+        return view('anonimo.package', compact('packages') );
+    }
 
     /**
      * Show the form for creating a new resource.

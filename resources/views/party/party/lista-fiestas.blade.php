@@ -21,7 +21,8 @@
   <body>
       
 <!-- Aquí va el header -->
-@include('party.header')
+@extends('layouts.app')
+@section('content')
 
     <main role="main">
 
@@ -77,7 +78,7 @@
     </main>
 
 <!-- Aquí va el footer -->
-@include('party.footer')
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -88,4 +89,5 @@
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
   </body>
+  @endsection
 </html>

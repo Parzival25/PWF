@@ -42,13 +42,13 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-             
-                        <li class="nav-item">
-                            <a href="" class="nav-link">Home</a>
-                        </li>
+    
                     
                      
                         @guest
+                            <div class="nav-item">
+                                <a class="nav-link" href="{{ asset('/pakages')}}">{{ __('Paquetes') }}</a>
+                            </div>
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -61,6 +61,12 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                                <a href="{{ asset('home')}}" class="nav-link">{{ __('Paquetes') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ asset('/listParty')}}" class="nav-link">{{ __('Mis eventos') }}</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

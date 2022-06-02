@@ -15,9 +15,6 @@
 @extends('layouts.app')
 
 @section('content')
-                <div class="trans text-center">
-                  <a type="button" class="btn btn-primary btn-lg btn-block" href="{{ asset('/pakages')}}">Paquetes</a>
-                </div>
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <img src="/fotos/Even-TEC.jpg" alt="" width="1536" height="570">

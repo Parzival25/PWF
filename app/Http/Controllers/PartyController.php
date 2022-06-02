@@ -56,7 +56,7 @@ class PartyController extends Controller
     {
         //$parties= Party::get();
         //return view('party.lista-fiestas', compact('parties'));
-        return view('party.lista-fiestas');
+        return view('party.party.lista-fiestas');
     }
 
     /**
