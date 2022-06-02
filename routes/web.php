@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Route::get('/pakages', ['App\Http\Controllers\PackagesController', 'index2']);
 Route::get('/pakages-crear', ['App\Http\Controllers\PackagesController', 'create']);
+Route::get('/pakages-editar', ['App\Http\Controllers\PackagesController', 'update']);
 
 Auth::routes();
 
