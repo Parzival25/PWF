@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return response()->json($users);
+        return view('gerente.listaClientes',compact('users'));
     }
 
     /**
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('gerente.usuarios');
     }
 
     /**
@@ -35,10 +35,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::create($request->post());
-        return response()->json([
-            'user'=>$user
-        ]);
+        $user = new User();
+        $user = $this->createUpdateUser($request, $user);
+        return view('gerente.usuarios');
+    }
+
+    public function createUpdateUser(Request $request, $user)
+    {
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->image=$request->image;
+        $user->rol=$request->rol;
+        $user->password=$request->password;
+
+        $producto->save();
+        return $user;
     }
 
     /**
@@ -58,9 +69,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('gerente.usuarios', compact('user'));
     }
 
     /**
@@ -87,8 +98,11 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return response()->json([
-            'mensaje'=>'Usuario eliminado'
-        ]);
+        return back();
+    }
+
+    public function views()
+    {
+        return view('gerente.welcome');
     }
 }
