@@ -48,7 +48,7 @@ class UserController extends Controller
         $user->rol=$request->rol;
         $user->password=$request->password;
 
-        $producto->save();
+        $user->save();
         return $user;
     }
 

@@ -21,7 +21,13 @@
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
               <td>
-                  <img src="/fotos/{{ $user->image }}" width="50%">
+              <?php
+                $imagen = $user->image;
+                if (!file_exists($imagen)){
+                $imagen = "img/no-photo.png";
+                }
+              ?>
+              <img src="<?php echo $imagen; ?>" height="250" width="250" style="text-align: center;">
               </td>
               <td>
                 <div>

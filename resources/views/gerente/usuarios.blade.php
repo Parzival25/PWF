@@ -1,8 +1,7 @@
 @include('gerente.header')
 <div class="container">
-  <form id="form-data" method="POST" action="registro" width=350px> 
-  @csrf
-    <input type="hidden" name="_token" value="" id="token">
+  <form id="form-data" method="POST" action="registro" width=350px enctype="multipart/form-data"> 
+    <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
       <div class="row">
         <div class="col-md-12">
             <label for="name" class="form-label">Nombre</label>
@@ -14,12 +13,22 @@
             <input type="email" class="form-control" name="email" id="email" value="{{(isset($user))?$user->email:old('email')}}" required='true' autofocus>
         </div>
 
+        <div class="col-md-12">
+            <img id="imagenSeleccionada" style="max-height: 300px;">
+        </div>
+
+        <div class="col-md-12">
+            <label for="image" class="form-label">Imagen</label>
+            <input type="file" class="form-control" name="image" id="image" value="{{(isset($user))?$user->image:old('image')}}" required='true' autofocus>
+
+        </div>
+
         <div class="col-md-6 mt-2">
             <label for="Sexo" class="form-label">Rol</label>
             <p>
                 <select name="rol" class="mx-sm-4" value="{{(isset($user))?$user->rol:old('rol')}}" require>
-                  <option>Gerente</option>
-                  <option>Empleado</option>
+                  <option>Manager</option>
+                  <option>Employee</option>
                 </select>
             </p>
           </div>
@@ -43,3 +52,15 @@
 
   <div id="resp"> </div>
 </div>
+
+<script>
+  $(document).ready(function (e){
+    $('#image').change(function(){
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        $('#imagenSeleccionada').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(this.file[0]);
+    })
+  })
+</script>
