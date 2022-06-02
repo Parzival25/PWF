@@ -14,7 +14,7 @@ class Party extends Model implements Auditable
     protected $fillable = [
         'id',
         'name', 
-        'descripcion',
+        'description',
         'imagen',
         'imagen2',
         'imagen3',

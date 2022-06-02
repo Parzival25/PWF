@@ -26,6 +26,10 @@ Route::get('/listaClientes', function () {
     return view('gerente.listaClientes');
 });
 
+
+Route::get('/create-party', function () {
+    return view('party.party.crear-fiesta');
+});
 Route::get('/pakages', ['App\Http\Controllers\PackagesController', 'index2']);
 Route::get('/pakages-crear', ['App\Http\Controllers\PackagesController', 'create']);
 
@@ -38,6 +42,6 @@ Route::get('party/list',function(){return view('party/party/lista-fiestas');})->
 Route::get('list', [App\Http\Controllers\PartyController::class, 'index'])->name('party.list');
 
 Route::get('/listParty', ['App\Http\Controllers\PartyController', 'list']);
-Route::get('/create-party', ['App\Http\Controllers\PartyController', 'create']);
+Route::post('/create-party', ['App\Http\Controllers\PartyController', 'create']);
 Route::get('/update-party', ['App\Http\Controllers\PartyController', 'update']);
 

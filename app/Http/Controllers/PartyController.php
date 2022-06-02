@@ -36,10 +36,17 @@ class PartyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-           
-        return view('party.crear-fiesta');
+        $party = new Party();
+        $party->name = $request->input('name');
+        $party->description = $request->input('description');
+        $party->imgen = $request->input('imgen');
+        $party->user_id = $request->input(Auth()->id());
+        $party->packager_id = $request->input(1);
+        $party->save();
+        return json_encode(["msg" => "usuario agregado"]);
+
     }
 
     /**
