@@ -65,7 +65,7 @@
                                 <a href="{{ asset('home')}}" class="nav-link">{{ __('Paquetes') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ asset('/listParty')}}" class="nav-link">{{ __('Mis eventos') }}</a>
+                                <a href="{{ asset('party/list')}}" class="nav-link">{{ __('Mis eventos') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

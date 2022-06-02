@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Party;
 use Illuminate\Http\Request;
 
 class PartyController extends Controller
@@ -13,7 +14,22 @@ class PartyController extends Controller
      */
     public function index()
     {
-        //
+        $party= Party::all();
+
+        $TablaJson="";
+        for($i=0;$i<count($party);$i++){
+        $gestionar="<a class='btn btn-warning btn-sm'><i class='fas fa-edit'></i></a>";
+        $TablaJson.='{
+        "ID":"'.$party[$i]->{"id"}.'",
+        "NAME":"'.$party[$i]->{"name"}.'",
+        "DESCRIPTION":"'.$party[$i]->{"descripcion"}.'",
+        "CONFIRMED":"'.$party[$i]->{"confirmed"}.'",
+        "GESTIONAR":"'.$gestionar.'"
+        },';
+        }
+        $DatoJson = substr($TablaJson,0,strlen($TablaJson)-1);
+        $FormatoJSON='{"party":['.$DatoJson.']}';
+        echo $FormatoJSON;
     }
 
     /**
@@ -23,10 +39,7 @@ class PartyController extends Controller
      */
     public function create()
     {
-            /*
-            $parties= Party::get();
-            return view('party.party', compact('parties') );
-            */
+           
         return view('party.crear-fiesta');
     }
 
@@ -54,8 +67,7 @@ class PartyController extends Controller
 
     public function list()
     {
-        //$parties= Party::get();
-        //return view('party.lista-fiestas', compact('parties'));
+       
         return view('party.party.lista-fiestas');
     }
 
@@ -81,10 +93,7 @@ class PartyController extends Controller
     //public function update(Request $request, $id)
     public function update()
     {
-            /*
-            $parties= Party::get();
-            return view('party.party', compact('parties') );
-            */
+            
             return view('party.editar-fiesta');
     }
 
