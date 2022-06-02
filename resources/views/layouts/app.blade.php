@@ -42,9 +42,6 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-    
-                    
-                     
                         @guest
                             <div class="nav-item">
                                 <a class="nav-link" href="{{ asset('/pakages')}}">{{ __('Paquetes') }}</a>
@@ -61,17 +58,45 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item">
+                            @switch(Auth::user()->rol)
+                            @case( 'Manager' )
+                                <li class="nav-item">
+                                    <a href="{{ asset('home')}}" class="nav-link">{{ __('Usuarios') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('party/list')}}" class="nav-link">{{ __('Paquetes') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('party/list')}}" class="nav-link">{{ __('Eventos') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('party/list')}}" class="nav-link">{{ __('Abonos') }}</a>
+                                </li>
+                            @break
+                            @case( 'Employee' )
+                                <li class="nav-item">
+                                    <a href="{{ asset('party/list')}}" class="nav-link">{{ __('Eventos') }}</a>
+                                </li>
+                            @break
+                            @case( 'Customer' )
+                                <li class="nav-item">
+                                    <a href="{{ asset('home')}}" class="nav-link">{{ __('Paquetes') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ asset('party/list')}}" class="nav-link">{{ __('Mis eventos') }}</a>
+                                </li>
+                            @break
+                            @endswitch
+                            {{-- <li class="nav-item">
                                 <a href="{{ asset('home')}}" class="nav-link">{{ __('Paquetes') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ asset('party/list')}}" class="nav-link">{{ __('Mis eventos') }}</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
